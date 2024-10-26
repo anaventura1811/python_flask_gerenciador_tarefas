@@ -47,5 +47,20 @@ def show_user(username):
     return username
 
 
+@app.route('/tasks/<int:id>', methods=['PUT'])
+def update_task(id):
+    data = request.get_json()
+    task = None
+    task = [task for task in tasks if task.id == id][0]
+    if task:
+        task.title = data.get("title")
+        task.description = data.get('description')
+        task.completed = data.get('completed')
+        print(task)
+        return jsonify({"message": "Atividade atualizada com sucesso"})
+    return jsonify(
+        {"message": "Não foi possível encontrar a atividade"}), 404
+
+
 if __name__ == "__main__":
     app.run(debug=True)
