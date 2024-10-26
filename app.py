@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, make_response
+from flask import Flask, request, jsonify
 from models.task import Task
 
 
@@ -56,10 +56,19 @@ def update_task(id):
         task.title = data.get("title")
         task.description = data.get('description')
         task.completed = data.get('completed')
-        print(task)
+        # print(task)
         return jsonify({"message": "Atividade atualizada com sucesso"})
     return jsonify(
         {"message": "Não foi possível encontrar a atividade"}), 404
+
+
+@app.route('/tasks/<int:id>', methods=['DELETE'])
+def delete_task(id):
+    task = [task for task in tasks if task.id == id][0]
+    if task:
+        tasks.remove(task)
+        return jsonify({"message": "Tarefa deletada com sucesso"})
+    return jsonify({"message": "A tarefa não existe"}), 404
 
 
 if __name__ == "__main__":
