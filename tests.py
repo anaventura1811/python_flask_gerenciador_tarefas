@@ -35,7 +35,6 @@ def test_get_task():
 
 
 def test_update_task():
-    # if tasks:
     new_task_data = {
       "title": "Nova tarefa",
       "description": "Descrição da nova tarefa",
