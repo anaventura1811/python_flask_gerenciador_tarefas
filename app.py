@@ -58,7 +58,6 @@ def update_task(id):
         task.title = data.get("title")
         task.description = data.get('description')
         task.completed = data.get('completed')
-        print(task)
         return jsonify(
             {"message": "Atividade atualizada com sucesso", "id": id})
     return jsonify(
@@ -69,7 +68,6 @@ def update_task(id):
 def delete_task(id):
     task = [task for task in tasks if task.id == id][0]
     if task:
-        print('task delete: ', task)
         tasks.remove(task)
         return jsonify({"message": "Tarefa deletada com sucesso"})
     return jsonify({"message": "A tarefa não existe"}), 404
