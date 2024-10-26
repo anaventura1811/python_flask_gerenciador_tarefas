@@ -32,6 +32,9 @@ A aplicação foi organizada em rotas RESTful, conforme as boas práticas do des
 - **Flask**: Framework web utilizado para criar a API.
 - **PyTest**: Lib para criação e execução de testes unitários na API.
 
+<img width="1140" alt="Captura de Tela 2024-10-26 às 13 28 55" src="https://github.com/user-attachments/assets/0a632a5e-32e0-4fbb-b123-f271ec91b573">
+
+
 ## Como Rodar o Projeto
 
 1. Clone este repositório:
@@ -57,7 +60,11 @@ A aplicação foi organizada em rotas RESTful, conforme as boas práticas do des
 
     # Ou alternativamente, execute na raiz do projeto:
     python app.py
-
+    
+8. Para rodar os testes, rode o comando:
+   ```bash
+   pytest tests.py -v
+   
 Acesse a aplicação no navegador pelo endereço: **http://127.0.0.1:5000/tasks**.
 
 
