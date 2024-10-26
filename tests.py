@@ -75,3 +75,4 @@ def test_delete_task():
     id = response_get.json()["id"]
     response = requests.delete(f"{BASE_URL}/tasks/{id}")
     assert response.status_code == 200
+
