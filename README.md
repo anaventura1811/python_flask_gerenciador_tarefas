@@ -21,10 +21,10 @@ O **Task Manager** permite que o usuário crie, visualize, edite e delete tarefa
 A aplicação foi organizada em rotas RESTful, conforme as boas práticas do desenvolvimento web com Flask. Cada operação do CRUD possui uma rota dedicada:
 
 - **GET /tasks**: Visualiza a lista de tarefas.
-- **GET /tasks/<id>**: Visualiza uma tarefa.
+- **GET /tasks/:id**: Visualiza uma tarefa.
 - **POST /tasks**: Adiciona uma nova tarefa.
-- **PUT /tasks/<id>**: Edita uma tarefa existente.
-- **DELETE /tasks/<id>**: Exclui uma tarefa específica.
+- **PUT /tasks/:id**: Edita uma tarefa existente.
+- **DELETE /tasks/:id**: Exclui uma tarefa específica.
 
 ## Tecnologias Utilizadas
 
